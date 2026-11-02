@@ -81,6 +81,8 @@ def classificar_gesto(mao, largura, altura, dedos):
         return "DEDO DO MEIO"
     if dedos[0] and dedos[1] and total == 2:
         return "FAZ O L"
+
+    if dedos[0] and dedos[1] and total == 2 and 
     if total == 5:
         return "MAO ABERTA"
     if dedos[1] and dedos[2] and total == 2:
