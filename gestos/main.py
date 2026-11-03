@@ -82,7 +82,21 @@ def classificar_gesto(mao, largura, altura, dedos):
     if dedos[0] and dedos[1] and total == 2:
         return "FAZ O L"
 
-    if dedos[0] and dedos[1] and total == 2 and 
+    if dedos[0] and dedos[1] and total == 2:
+        dx = pontos[8][0] - pontos[5][0]
+        dy = pontos[8][1] - pontos[5][1]
+
+        ang = abs(math.degrees(math.atan2(dy, dx)))
+
+        if ang <= 30 or ang >= 150:
+            return "ARMA"
+
+        if 60 <= ang <= 120:
+            return "FAZ O L"
+
+        return "OUTRO"
+
+
     if total == 5:
         return "MAO ABERTA"
     if dedos[1] and dedos[2] and total == 2:
